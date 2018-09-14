@@ -8,10 +8,13 @@ class Scraper
   def self.scrape_index_page(index_url)
     html = open(index_url)
     doc = Nokogiri::HTML(html)
-    student= doc.css(".student-card").first
-    student_name = student.css("a div.card-text-container h4.student-name").text
-    student_location = student.css("a div.card-text-container p.student-location").text
-    student_url = student.css("a[href]").first['href']
+    student= doc.css(".student-card")
+    student.map do |student|
+      student_name = student.css("a div.card-text-container h4.student-name").text
+      student_location = student.css("a div.card-text-container p.student-location").text
+      student_url = student.css("a[href]").first['href']
+      student_info = {name: student_name, location: student_location, profile_url: student_url}
+      
     binding.pry
   end
 
