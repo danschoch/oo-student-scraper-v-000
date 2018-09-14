@@ -40,10 +40,6 @@ class Scraper
     student
   end
 
-
-    binding.pry
-  end
-
 end
 
 Scraper.scrape_profile_page("./fixtures/student-site/students/ryan-johnson.html")
