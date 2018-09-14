@@ -10,6 +10,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
     student= doc.css(".student-card").first
     student_name = student.css("a div.card-text-container h4.student-name").text
+    student_location = student.css("a div.card-text-container p.student-location").text
     binding.pry
   end
 
