@@ -11,6 +11,7 @@ class Scraper
     student= doc.css(".student-card").first
     student_name = student.css("a div.card-text-container h4.student-name").text
     student_location = student.css("a div.card-text-container p.student-location").text
+    student_url = student.css("a[href]").first['href']
     binding.pry
   end
 
