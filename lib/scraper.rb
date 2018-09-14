@@ -33,8 +33,14 @@ class Scraper
       else student[:blog] = link
       end
     end
-        
-        
+
+    student[:profile_quote] = doc.css(".vitals-text-container.profile-quote").text
+    student[:bio] = doc.css(".description-holder p").text
+
+    student
+  end
+
+
     binding.pry
   end
 
