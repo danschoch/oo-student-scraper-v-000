@@ -23,8 +23,9 @@ class Scraper
     html = open(profile_url)
     doc = Nokogiri::HTML(html)
     social_links = doc.css(".social-icon-container a[href]").collect {|link| link[href]}
+    binding.pry
   end
 
 end
 
-#Scraper.scrape_index_page("./fixtures/student-site/index.html")
+Scraper.scrape_profile_page("./fixtures/student-site/students/ryan-johnson.html")
