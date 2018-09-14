@@ -9,7 +9,7 @@ class Scraper
     html = open(index_url)
     doc = Nokogiri::HTML(html)
     student = doc.css(".student-card").first
-    student_name = student.css("href").first
+    student_name = student.css("a[href]").first
     binding.pry
   end
 
