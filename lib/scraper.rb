@@ -42,4 +42,4 @@ class Scraper
 
 end
 
-Scraper.scrape_profile_page("./fixtures/student-site/students/ryan-johnson.html")
+#Scraper.scrape_profile_page("./fixtures/student-site/students/ryan-johnson.html")
