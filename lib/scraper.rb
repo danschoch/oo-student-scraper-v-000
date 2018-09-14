@@ -8,7 +8,8 @@ class Scraper
   def self.scrape_index_page(index_url)
     html = open(index_url)
     doc = Nokogiri::HTML(html)
-    student_url= doc.css(".student-card").first.css("a[href]")
+    student= doc.css(".student-card").first
+    student_name = student.css("a div.card-text-container h4.student-name").text
     binding.pry
   end
 
