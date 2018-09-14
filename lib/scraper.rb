@@ -14,8 +14,8 @@ class Scraper
       student_location = student.css("a div.card-text-container p.student-location").text
       student_url = student.css("a[href]").first['href']
       student_info = {name: student_name, location: student_location, profile_url: student_url}
-      
-    binding.pry
+      student_info
+    end
   end
 
   def self.scrape_profile_page(profile_url)
